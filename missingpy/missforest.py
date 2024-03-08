@@ -235,7 +235,7 @@ class MissForest(BaseEstimator, TransformerMixin):
     """
 
     def __init__(self, max_iter=10, decreasing=False, missing_values=np.nan,
-                 copy=True, n_estimators=100, criterion=('mse', 'gini'),
+                 copy=True, n_estimators=100, criterion=('squared_error', 'gini'),
                  max_depth=None, min_samples_split=2, min_samples_leaf=1,
                  min_weight_fraction_leaf=0.0, max_features='auto',
                  max_leaf_nodes=None, min_impurity_decrease=0.0,
@@ -522,7 +522,7 @@ class MissForest(BaseEstimator, TransformerMixin):
             raise ValueError("Incompatible dimension between the fitted "
                              "dataset and the one to be transformed.")
 
-        # Check if anything is actually missing and if not return original X                             
+        # Check if anything is actually missing and if not return original X
         mask = _get_mask(X, self.missing_values)
         if not mask.sum() > 0:
             warnings.warn("No missing value located; returning original "
