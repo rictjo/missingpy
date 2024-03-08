@@ -1,6 +1,6 @@
-## missingpy
+## missingforest
 
-`missingpy` is a library for missing data imputation in Python. It has an 
+`missingforest` is a library for missing data imputation in Python forked from [missingpy](https://github.com/epsilon-machine/missingpy). It has an 
 API consistent with [scikit-learn](http://scikit-learn.org/stable/), so users 
 already comfortable with that interface will find themselves in familiar 
 terrain. Currently, the library supports the following algorithms:
@@ -11,7 +11,7 @@ We plan to add other imputation tools in the future so please stay tuned!
 
 ## Installation
 
-`pip install missingpy`
+`pip install missingforest`
 
 ## 1. k-Nearest Neighbors (kNN) Imputation
 
@@ -46,7 +46,7 @@ encoded as `np.nan`, using the mean feature value of the two nearest
 neighbors of the rows that contain the missing values::
 
     >>> import numpy as np
-    >>> from missingpy import KNNImputer
+    >>> from missingforest import KNNImputer
     >>> nan = np.nan
     >>> X = [[1, 2, nan], [3, 4, 3], [nan, 6, 5], [8, 8, 7]]
     >>> imputer = KNNImputer(n_neighbors=2, weights="uniform")
@@ -226,7 +226,7 @@ time for both types of variables (if available).
 dummy encoded) and they need to be explicitly identified during the 
 imputer's fit() method call. See the API section for more information.**
 
-    >>> from missingpy import MissForest
+    >>> from missingforest import MissForest
     >>> nan = float("NaN")
     >>> X = [[1, 2, nan], [3, 4, 3], [nan, 6, 5], [8, 8, 7]]
     >>> imputer = MissForest(random_state=1337)
