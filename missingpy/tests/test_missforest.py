@@ -1,9 +1,9 @@
 import numpy as np
 from scipy.stats import mode
 
-from sklearn.utils.testing import assert_array_equal
-from sklearn.utils.testing import assert_raise_message
-from sklearn.utils.testing import assert_equal
+from sklearn.utils._testing import assert_array_equal
+from sklearn.utils._testing import assert_raise_message
+from sklearn.utils._testing import assert_almost_equal
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 
 from missingpy import MissForest
